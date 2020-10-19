@@ -77,12 +77,20 @@
     <div class="content" id="list" style="display: none;">
 
         <?php
+        $temp = true;
         for ($i = 1; $i < count($data1); $i += 2) {
-            # code...
-            echo "<h3>Peribahasa hari ini:</h3>";
-            echo $data1[$i][0] . "<br>";
-            echo $data1[$i + 1][0];
-            echo "<hr>";
+            $value = (bool)rand(0, 1);
+            # code...'
+            if ($value) {
+                $temp = false;
+                echo "<h3>Peribahasa hari ini:</h3>";
+                echo $data1[$i][0] . "<br>";
+                echo $data1[$i + 1][0];
+                echo "<hr>";
+            }
+        }
+        if ($temp) {
+            echo "<center><h2>Maaf belum ada peribahasa untuk sekarang  </h2></center>";
         }
         ?>
     </div>
